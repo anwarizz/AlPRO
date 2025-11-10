@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2, strong {
+            padding: 10px 0;
+        }
+
+        pre {
+            background-color: rgb(55, 55, 55);
+            color: white;
+            width: max-content;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .copy-btn {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+            transition: background-color 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: rgba(0, 0, 255, 0.492);
+        }
+
+        .kode-header {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Raja ganteng banget apipi😍😍😘</h1> <br>
+
+    <h2>1. Menentukan bilangan ganjil atau genap</h2>
+    <div class="kode-header">
+        <strong>Copy kode 👉</strong>
+        <button class="copy-btn" onclick="copyCode('code1')">Copy</button>
+    </div>
+    <pre id="code1">
+import java.util.Scanner;
+
+public class GanjilGenap {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Inputkan sebuah bilangan bulat
+        System.out.print("Masukkan sebuah bilangan: ");
+        int bilangan = input.nextInt();
+
+        // Periksa sisa hasil bagi dengan 2
+        if (bilangan % 2 == 0) {
+            System.out.println("Bilangan " + bilangan + " adalah bilangan genap.");
+        } else {
+            System.out.println("Bilangan " + bilangan + " adalah bilangan ganjil.");
+        }
+
+        input.close();
+    }
+}
+    </pre> <br>
+
+    <h2>2. Menentukan kelulusan mahasiswa</h2>
+    <div class="kode-header">
+        <strong>Copy kode 👉</strong>
+        <button class="copy-btn" onclick="copyCode('code2')">Copy</button>
+    </div>
+    <pre id="code2">
+import java.util.Scanner;
+
+public class KelulusanMahasiswa {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input nama dan nilai mahasiswa
+        System.out.print("Masukkan nama mahasiswa: ");
+        String nama = input.nextLine();
+
+        System.out.print("Masukkan nilai mahasiswa: ");
+        double nilai = input.nextDouble();
+
+        // Menentukan keterangan lulus atau tidak lulus
+        String keterangan;
+        if (nilai > 70) {
+            keterangan = "Lulus";
+        } else {
+            keterangan = "Tidak Lulus";
+        }
+
+        // Menampilkan hasil
+        System.out.println("\n=== Hasil Kelulusan ===");
+        System.out.println("Nama       : " + nama);
+        System.out.println("Nilai      : " + nilai);
+        System.out.println("Keterangan : " + keterangan);
+
+        input.close();
+    }
+}
+    </pre> <br>
+
+    <script>
+        function copyCode(id) {
+            const code = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert("Kode berhasil disalin!");
+            }).catch(err => {
+                alert("Gagal menyalin kode: " + err);
+            });
+        }
+    </script>
+</body>
+</html>
